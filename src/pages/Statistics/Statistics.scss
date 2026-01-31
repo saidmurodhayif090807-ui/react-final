@@ -1,0 +1,20 @@
+.Statistics{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .combined{
+        display: flex;
+        align-items: self-start;
+        justify-content: center;
+        flex-direction: column;
+        .lol1234{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 100px;
+            .btn11111{
+                border: none;
+            }
+        }
+    }
+}

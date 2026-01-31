@@ -1,0 +1,150 @@
+$bg-color: #f4f7f4;
+$card-bg: #ffffff;
+$text-dark: #1a1a1a;
+$text-light: #888;
+$error-red: #fde2e2;
+$error-border: #f8b4b4;
+
+.monitoring-dashboard {
+  padding: 0;
+  background-color: $card-bg;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    align-items: start;
+  }
+
+  .card {
+    background: $card-bg;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+
+    h3 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #2c3e50;
+      font-weight: 500;
+    }
+
+    .label {
+      color: $text-light;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
+
+  // Card specific layouts
+  .rejalar {
+    grid-column: span 1;
+    .error-alert {
+      background-color: $error-red;
+      border: 1px solid $error-border;
+      padding: 20px;
+      border-radius: 4px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  }
+
+  .ekin-tuzilishi {
+    grid-column: span 1;
+    .stats {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 25px;
+      .value {
+        font-size: 24px;
+        font-weight: 600;
+        display: block;
+        small { font-size: 14px; font-weight: normal; color: $text-light; }
+      }
+    }
+
+    .progress-bar {
+      display: flex;
+      height: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #eee;
+      margin-bottom: 15px;
+
+      .mosh { background: #67b173; }
+      .makkajoxori { background: #ffcc00; }
+      .bugdoy { background: #e67e22; }
+      .paxta { background: #d3d3d3; }
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 11px;
+      color: $text-dark;
+      .dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-right: 4px;
+        &.mosh { background: #67b173; }
+        &.makkajoxori { background: #ffcc00; }
+        &.bugdoy { background: #e67e22; }
+        &.paxta { background: #d3d3d3; }
+      }
+    }
+  }
+
+  .ob-havo {
+    grid-column: span 1;
+    grid-row: span 2; // Weather is long, spans 2 rows
+    
+    .current-weather {
+      margin-bottom: 20px;
+      .temp { font-size: 32px; font-weight: 500; }
+    }
+
+    .weather-forecast {
+      list-style: none;
+      padding: 0;
+      li {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 13px;
+        color: $text-light;
+      }
+    }
+  }
+
+  .temperature-sum {
+    .total-temp { font-size: 28px; font-weight: 600; }
+    .mini-chart-placeholder {
+      height: 100px;
+      background: linear-gradient(transparent, #eef7ee);
+      border-radius: 8px;
+      margin-top: 15px;
+      img{
+        margin-left: 80px;
+      }
+    }
+  }
+
+  .costs {
+    .total-cost { font-size: 28px; font-weight: 600; }
+  }
+}
+
+// Tablet and Mobile view
+@media (max-width: 1200px) {
+  .monitoring-dashboard .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

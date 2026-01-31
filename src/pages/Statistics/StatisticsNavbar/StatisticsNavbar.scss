@@ -1,0 +1,115 @@
+$nav-bg: #ffffff;
+$active-green: #008744;
+$active-bg: #e6f3ec;
+$text-gray: #999999;
+$text-dark: #000000;
+$border-light: #e0e0e0;
+.statistics-navbar_all{
+  display: flex;
+  align-items: self-start;
+  justify-content: center;
+}
+.change_icon {
+  border: none;
+  margin: 0 auto;
+  position: absolute;
+  left: 270px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.statistics-navbar {
+  transition: .3s;
+  position: relative;
+  width: 260px;
+  height: 100vh;
+  background-color: $nav-bg;
+  border-right: 1px solid $border-light;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  .navbar-logo {
+    padding: 0 24px 40px 24px;
+
+    img {
+      height: 60px;
+      object-fit: contain;
+    }
+  }
+
+  .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      padding: 15px 24px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      color: $text-gray;
+
+      .nav-icon {
+        font-size: 24px;
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        // If using standard SVGs, apply the green color
+        color: inherit;
+      }
+
+      .nav-text {
+        font-size: 16px;
+        font-weight: 500;
+
+        a {
+          text-decoration: none;
+          font-family: Arial, Helvetica, sans-serif;
+          color: black;
+        }
+      }
+
+      &:hover {
+        background-color: #f8f8f8;
+      }
+
+      &.active {
+        background-color: $active-bg;
+        color: $text-dark;
+
+        // The vertical green indicator on the left
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 6px;
+          background-color: $active-green;
+        }
+
+        .nav-icon {
+          color: $active-green;
+        }
+      }
+    }
+  }
+}
+
+// Adjusting main content area to make room for fixed sidebar
+// You would apply this to your main wrapper or Layout component
+.main-layout-content {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+}
+
+.statistics-navbar.not_allowed {
+  transition: .3s;
+  display: none;
+}
