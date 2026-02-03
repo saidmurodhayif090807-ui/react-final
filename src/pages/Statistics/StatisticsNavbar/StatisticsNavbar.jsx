@@ -13,10 +13,6 @@ import {
 import { NavLink } from 'react-router-dom';
 
 const StatisticsNavbar = () => {
-  const [poplog, Setpoplog] = useState(true)
-  const handleclick404 = () => {
-    Setpoplog(!poplog)
-  }
   const menuItems = [
     { id: 1, linking: "/statistics/monitoring", title: 'Monitoring', icon: <MdDashboard />, active: true },
     { id: 2, linking: "/statistics/yermaydonlari", title: 'Yer maydonlari', icon: <MdMap />, active: false },
@@ -26,26 +22,26 @@ const StatisticsNavbar = () => {
   ];
 
   return (
-    <div className="statistics-navbar_all">
-      <button onClick={handleclick404} className='change_icon'><img src={StatisticsNavbar_img2} alt="" /></button>
-      <nav className={poplog ? 'statistics-navbar' : 'statistics-navbar not_allowed'}>
-        <div className="navbar-logo">
-          <img src={StatisticsNavbar_img1} alt="Agro App" />
-        </div>
+    <nav className='statistics-navbar'>
+      <div className="navbar-logo">
+        <img src={StatisticsNavbar_img1} alt="Agro App" />
+      </div>
 
-        <ul className="nav-menu">
-          {menuItems.map((item) => (
+      <ul className="nav-menu">
+        {menuItems.map((item) => (
+          <NavLink className="nav_panel" to={item.linking}>
             <li
               key={item.id}
-              className={`nav-item ${item.active ? 'active' : ''}`}
+              // className={`nav-item ${item.active ? 'active' : ''}`}
+              className={`nav-item`}
             >
               <span className="nav-icon">{item.icon}</span>
-              <span className="nav-text"><NavLink to={item.linking}>{item.title}</NavLink></span>
+              <span className="nav-text">{item.title}</span>
             </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
+          </NavLink>
+        ))}
+      </ul>
+    </nav>
   );
 };
 

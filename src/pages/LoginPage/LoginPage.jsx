@@ -48,7 +48,7 @@ const LoginPage = () => {
 
                     <form onSubmit={handleLogin} className="login-form">
                         <div className="input-group input-group12">
-                            <label>Telefon raqam</label>
+                            <label>Ism kiritish</label>
                             <div className="phone-input-wrapper">
                                 {/* <div className="country-code">
                   <img src={illustration_img3} alt="UZ" />
@@ -81,9 +81,9 @@ const LoginPage = () => {
                             <button onClick={handleClick} type="submit" className="login-btn">Kirish</button>
                         }
 
-                        <a href="/reset" className="forgot-password">
+                        <NavLink to={'/createaccount'} className="forgot-password">
                             parolni qayta tiklash
-                        </a>
+                        </NavLink>
                     </form>
                 </div>
 

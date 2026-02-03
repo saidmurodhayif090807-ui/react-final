@@ -1,18 +1,56 @@
-.Statistics{
+.Statistics {
     display: flex;
     align-items: center;
     justify-content: center;
-    .combined{
+
+    .isolated {
+        position: relative;
+        // display: flex;
+        // align-items: self-start;
+        // justify-content: center;
+        z-index: 1;
+        transition: .5s;
+
+        &.isolated_extra {
+            transform: translateX(-274px);
+            transition: .5s;
+        }
+
+        .change_icon {
+            border: none;
+            margin: 0 auto;
+            position: absolute;
+            left: 270px;
+            top: -380px;
+            cursor: pointer;
+            .FaChevronDown{
+                height: 48px;
+                width: 48px;
+                transition: .3s;
+                color: white;
+            }
+        }
+    }
+
+    .combined {
         display: flex;
         align-items: self-start;
         justify-content: center;
         flex-direction: column;
-        .lol1234{
+        transition: .5s;
+
+        &.combined_extra {
+            transition: .5s;
+            transform: translateX(274px);
+        }
+
+        .lol1234 {
             display: flex;
             align-items: center;
             justify-content: center;
             column-gap: 100px;
-            .btn11111{
+
+            .btn11111 {
                 border: none;
             }
         }

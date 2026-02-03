@@ -17,6 +17,7 @@ $bg-white: #ffffff;
     .top-left-section {
         display: flex;
         height: 100%;
+
         .action-item {
             display: flex;
             flex-direction: column;
@@ -25,7 +26,38 @@ $bg-white: #ffffff;
             border-right: 1px solid $border-color;
             cursor: pointer;
             height: 100%;
-
+            position: relative;
+            .add_cards {
+                display: flex;
+                flex-direction: column;
+                align-items: self-start;
+                justify-content: center;
+                row-gap: 20px;
+                position: absolute;
+                top: 7z0px;
+                background-color: white;
+                padding: 8px 10px;
+                border: 1px solid rgba(0, 0, 0, 0.199);
+                // display: none;
+                display: none;
+                transition: .3s;
+                span {
+                    width: 100px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    column-gap: 20px;
+                    padding: 2px 3px;
+                    &:hover{
+                        border: 1px solid grey;
+                    }
+                }
+            }
+            &:hover{
+                .add_cards{
+                    display: flex;
+                }
+            }
             &:first-child {
                 border-left: 1px solid $border-color;
             }
@@ -44,10 +76,11 @@ $bg-white: #ffffff;
         }
 
         .season-selector {
-            .hello_world123{
+            .hello_world123 {
                 width: 60px;
             }
-             .label {
+
+            .label {
                 font-size: 12px;
                 color: $primary-green;
                 margin-bottom: 2px;

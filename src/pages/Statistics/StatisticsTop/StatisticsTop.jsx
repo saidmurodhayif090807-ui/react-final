@@ -1,7 +1,8 @@
 import React from 'react';
 import './StatisticsTop.scss';
-import { MdAddCircleOutline, MdNotificationsNone, MdKeyboardArrowDown } from 'react-icons/md';
-
+import { MdAddCircleOutline, MdNotificationsNone, MdKeyboardArrowDown, MdMap } from 'react-icons/md';
+import { GiSpade } from "react-icons/gi";
+import { LuWheat } from "react-icons/lu";
 const StatisticsTop = () => {
   return (
     <header className="statistics-top">
@@ -10,6 +11,11 @@ const StatisticsTop = () => {
         <div className="action-item add-action">
           <MdAddCircleOutline className="icon" />
           <span>Qo'shish</span>
+          <div className="add_cards">
+            <span className='add_extra_card'><GiSpade />Ish</span>
+            <span className='add_extra_card'><LuWheat />Ekin</span>
+            <span className='add_extra_card'><MdMap />Maydon</span>
+          </div>
         </div>
 
         {/* Mavsumlar (Seasons) Dropdown */}
@@ -36,9 +42,9 @@ const StatisticsTop = () => {
           <div className="avatar-placeholder">
             {/* Using an SVG or Icon to match the green circular profile */}
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 31C24.2843 31 31 24.2843 31 16C31 7.71573 24.2843 1 16 1C7.71573 1 1 7.71573 1 16C1 24.2843 7.71573 31 16 31Z" stroke="#008744" strokeWidth="2"/>
-              <path d="M16 16C18.7614 16 21 13.7614 21 11C21 8.23858 18.7614 6 16 6C13.2386 6 11 8.23858 11 11C11 13.7614 13.2386 16 16 16Z" fill="#008744"/>
-              <path d="M7 25C7 21.134 11.0294 18 16 18C20.9706 18 25 21.134 25 25" stroke="#008744" strokeWidth="2" strokeLinecap="round"/>
+              <path d="M16 31C24.2843 31 31 24.2843 31 16C31 7.71573 24.2843 1 16 1C7.71573 1 1 7.71573 1 16C1 24.2843 7.71573 31 16 31Z" stroke="#008744" strokeWidth="2" />
+              <path d="M16 16C18.7614 16 21 13.7614 21 11C21 8.23858 18.7614 6 16 6C13.2386 6 11 8.23858 11 11C11 13.7614 13.2386 16 16 16Z" fill="#008744" />
+              <path d="M7 25C7 21.134 11.0294 18 16 18C20.9706 18 25 21.134 25 25" stroke="#008744" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </div>
         </div>

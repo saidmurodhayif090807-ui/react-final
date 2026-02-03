@@ -1,0 +1,99 @@
+// Variables
+$primary-blue: #00aeff;
+$success-green: #50c878;
+$text-dark: #2c3e50;
+$text-muted: #5f6c7b;
+$white: #ffffff;
+
+.success-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9fbff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  .success-card {
+    background: $white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    // Optional: add a soft shadow if not on a flat background
+    // box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
+    .icon-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 30px;
+
+      .checkmark-circle {
+        width: 80px;
+        height: 80px;
+        background-color: $success-green;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+
+        .checkmark {
+          color: $white;
+          font-size: 40px;
+          transform: scaleX(-1) rotate(-35deg); // Mimics a checkmark using a letter
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+      }
+
+      // Decorative dots/lines (Confetti)
+      .dot, .line {
+        position: absolute;
+        border-radius: 50%;
+      }
+      .dot-1 { width: 8px; height: 8px; background: #a29bfe; top: -10px; left: -10px; }
+      .dot-2 { width: 6px; height: 6px; background: #fdcb6e; bottom: -5px; right: -15px; }
+      .line-1 { 
+        width: 15px; height: 2px; background: #ff7675; 
+        top: 10px; right: -20px; transform: rotate(45deg); 
+      }
+    }
+
+    .success-title {
+      color: $text-dark;
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .success-message {
+      color: $text-muted;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .login-button {
+      background-color: $primary-blue;
+      color: $white;
+      border: none;
+      padding: 14px 0;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background-color: darken($primary-blue, 5%);
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+}

@@ -4,19 +4,7 @@ $active-bg: #e6f3ec;
 $text-gray: #999999;
 $text-dark: #000000;
 $border-light: #e0e0e0;
-.statistics-navbar_all{
-  display: flex;
-  align-items: self-start;
-  justify-content: center;
-}
-.change_icon {
-  border: none;
-  margin: 0 auto;
-  position: absolute;
-  left: 270px;
-  top: 10px;
-  cursor: pointer;
-}
+
 
 .statistics-navbar {
   transition: .3s;
@@ -34,7 +22,7 @@ $border-light: #e0e0e0;
 
   .navbar-logo {
     padding: 0 24px 40px 24px;
-
+    margin: 0 auto;
     img {
       height: 60px;
       object-fit: contain;
@@ -45,7 +33,35 @@ $border-light: #e0e0e0;
     list-style: none;
     padding: 0;
     margin: 0;
+    .nav_panel{
+      text-decoration: none;
+      &.active {
+        background-color: $active-bg;
+        color: $text-dark;
+        .nav-item{
+          background-color: rgba(60, 159, 32, 0.548);
+        }
+        // The vertical green indicator on the left
+        .nav-item::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 6px;
+          background-color: $active-green; 
+        }
 
+        .nav-icon {
+          color: $active-green;
+        }
+        .nav-text{
+          text-decoration: none;
+          border: none;
+          color: #ffff;
+        }
+      }
+    }
     .nav-item {
       display: flex;
       align-items: center;
@@ -67,36 +83,10 @@ $border-light: #e0e0e0;
       .nav-text {
         font-size: 16px;
         font-weight: 500;
-
-        a {
-          text-decoration: none;
-          font-family: Arial, Helvetica, sans-serif;
-          color: black;
-        }
       }
 
       &:hover {
         background-color: #f8f8f8;
-      }
-
-      &.active {
-        background-color: $active-bg;
-        color: $text-dark;
-
-        // The vertical green indicator on the left
-        &::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 0;
-          bottom: 0;
-          width: 6px;
-          background-color: $active-green;
-        }
-
-        .nav-icon {
-          color: $active-green;
-        }
       }
     }
   }
@@ -107,9 +97,4 @@ $border-light: #e0e0e0;
 .main-layout-content {
   margin-left: 260px;
   width: calc(100% - 260px);
-}
-
-.statistics-navbar.not_allowed {
-  transition: .3s;
-  display: none;
 }
