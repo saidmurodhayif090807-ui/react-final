@@ -6,7 +6,7 @@ import StatisticsTop from './StatisticsTop/StatisticsTop'
 import Statistics_imgs1 from './Statistics_imgs/icons8-menu-48.png'
 import { FaChevronDown } from "react-icons/fa";
 function Statistics() {
-    const [poplog, Setpoplog] = useState(true)
+    const [poplog, Setpoplog] = useState(false)
     const handleclick404 = () => {
         Setpoplog(!poplog)
     }
@@ -14,10 +14,9 @@ function Statistics() {
         <div className='Statistics'>
             <div className={poplog?"isolated":"isolated isolated_extra"}>
                 <StatisticsNavbar />
-                <button onClick={handleclick404} className='change_icon'>{poplog?<FaChevronDown className='FaChevronDown'/>:<img src={Statistics_imgs1} alt="" />}</button>
             </div>
             <section className={poplog ? 'combined combined_extra' : 'combined'}>
-                <StatisticsTop />
+                <StatisticsTop handleclick404={handleclick404} poplog={poplog}/>
                 <Outlet />
             </section>
         </div>

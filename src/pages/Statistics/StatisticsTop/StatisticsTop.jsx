@@ -1,17 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './StatisticsTop.scss';
-import { MdAddCircleOutline, MdNotificationsNone, MdKeyboardArrowDown, MdMap } from 'react-icons/md';
+import { MdAddCircleOutline, MdNotificationsNone, MdKeyboardArrowDown, MdMap, MdRemoveCircleOutline } from 'react-icons/md';
 import { GiSpade } from "react-icons/gi";
 import { LuWheat } from "react-icons/lu";
-const StatisticsTop = () => {
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import Statistics_top_imgs1 from '../Statistics_imgs/icons8-menu-48.png'
+import { NavLink } from 'react-router-dom';
+const StatisticsTop = (props) => {
+  const [statistic_open, setStatistic_open] = useState(false);
+  const [statistic2_open, setStatistic2_open] = useState(false);
+  const [Sword, setSword] = useState("2022");
+  const box_handle_2 = () => {
+    setStatistic2_open(!statistic2_open)
+  }
+  const [statistic2, setStatistic2] = useState("");
+  const box_handle_1 = () => {
+    setStatistic_open(!statistic_open)
+  }
   return (
     <header className="statistics-top">
       <div className="top-left-section">
+        <button onClick={props.handleclick404} className='change_icon'>{props.poplog ? <FaChevronDown className='FaChevronDown' /> : <img src={Statistics_top_imgs1} alt="" />}</button>
         {/* Qoshish (Add) Button */}
-        <div className="action-item add-action">
-          <MdAddCircleOutline className="icon" />
+        <div onClick={box_handle_1} className="action-item add-action">
+          {statistic_open ? <MdRemoveCircleOutline className='icon' /> : <MdAddCircleOutline className="icon" />}
           <span>Qo'shish</span>
-          <div className="add_cards">
+          <div className={`add_cards ${statistic_open ? "add_cards_true" : ''}`}>
+            <FaChevronUp className='icon' />
             <span className='add_extra_card'><GiSpade />Ish</span>
             <span className='add_extra_card'><LuWheat />Ekin</span>
             <span className='add_extra_card'><MdMap />Maydon</span>
@@ -21,12 +36,14 @@ const StatisticsTop = () => {
         {/* Mavsumlar (Seasons) Dropdown */}
         <div className="action-item season-selector">
           <div className="label">Mavsumlar</div>
-          <select className='hello_world123' name="" id="">
-            <option value="2022">2022</option>
-            <option value="2021">2021</option>
-            <option value="2020">2020</option>
-            <option value="2019">2019</option>
-          </select>
+          <h1 className='hello_world123' onClick={box_handle_2}>{Sword}{statistic2_open?<FaChevronUp className='hello_world1234'/>:<FaChevronDown className='hello_world1234' />}</h1>
+          {statistic2_open ? <div className="odobli">
+            <span onClick={()=>setSword("2022")}>2022</span>
+            <span onClick={()=>setSword("2021")}>2021</span>
+            <span onClick={()=>setSword("2020")}>2020</span>
+            <span onClick={()=>setSword("2019")}>2019</span>
+            <span className='hello_world404'><NavLink to={'/statistics/addseason'}>Mavsum qo’shish</NavLink></span>
+          </div> : <></>}
         </div>
       </div>
 

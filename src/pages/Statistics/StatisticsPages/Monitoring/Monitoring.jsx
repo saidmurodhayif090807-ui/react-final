@@ -3,11 +3,16 @@ import './Monitoring.scss';
 import Monitoring_imgs1 from './Monitoring_imgs/Vector (5).png'
 import Monitoring_imgs2 from './Monitoring_imgs/Group.png'
 import Monitoring_imgs3 from './Monitoring_imgs/Group (1).png'
+import Monitoring_imgs4 from './Monitoring_imgs/Frame.png'
+import Monitoring_imgs5 from './Monitoring_imgs/Water.png'
+import Monitoring_imgs6 from './Monitoring_imgs/Precipitation.png'
+import Monitoring_imgs7 from './Monitoring_imgs/ember1368.png'
+import Monitoring_imgs8 from './Monitoring_imgs/ember1370.png'
 const Monitoring = () => {
   return (
     <div className="monitoring-dashboard">
       <div className="dashboard-grid">
-        
+
         {/* Rejalar Card */}
         <div className="card rejalar">
           <h3>Rejalar</h3>
@@ -60,10 +65,19 @@ const Monitoring = () => {
           </div>
           <ul className="weather-forecast">
             {[...Array(12)].map((_, i) => (
-              <li key={i}>
-                <span>13 dekabr, seshanba</span>
-                <span className="temp-range"><img src={Monitoring_imgs3} alt="" />-4 ... -2 °C</span>
-              </li>
+              <div key={i} className="forecast">
+                <li>
+                  <span>13 dekabr, seshanba</span>
+                  <span className="temp-range"><img src={Monitoring_imgs3} alt="" />-4 ... -2 °C</span>
+                </li>
+                <div className="forecast_cards">
+                  <span className='big_span'><img src={Monitoring_imgs4} alt="" />-2<small>°C</small></span>
+                  <span><img src={Monitoring_imgs5} alt="" />66%</span>
+                  <span><img src={Monitoring_imgs6} alt="" />0 мм</span>
+                  <span><img src={Monitoring_imgs7} alt="" />—</span>
+                  <span><img src={Monitoring_imgs8} alt="" />9 м/с</span>
+                </div>
+              </div>
             ))}
           </ul>
         </div>
@@ -75,7 +89,7 @@ const Monitoring = () => {
           <p className="total-temp">36.46 <small>°C</small></p>
           <div className="mini-chart-placeholder">
             <img src={Monitoring_imgs1} alt="" />
-            <img src={Monitoring_imgs2} alt="" />
+            <img className='mini_chart_img' src={Monitoring_imgs2} alt="" />
             {/* You would insert an Area Chart component here */}
             <div className="chart-bg"></div>
           </div>

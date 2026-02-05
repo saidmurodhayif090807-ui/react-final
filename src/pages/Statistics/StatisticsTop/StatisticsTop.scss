@@ -2,21 +2,46 @@ $border-color: #e0e0e0;
 $primary-green: #008744;
 $text-gray: #b0b0b0;
 $bg-white: #ffffff;
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 .statistics-top {
+    font-family: Inter;
     height: 70px;
     background-color: $bg-white;
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: 851px;
+    column-gap: 900px;
     border-bottom: 1px solid $border-color;
     padding: 0; // Padding is handled by internal sections
     width: 100%;
 
     .top-left-section {
         display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 12px;
         height: 100%;
+        position: relative;
+
+        .change_icon {
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            left: -104px;
+
+            // margin-right: 170px;
+            max-height: 60px;
+            height: 55px;
+            overflow: hidden;
+            border-radius: 50px;
+
+            .FaChevronDown {
+                height: 48px;
+                width: 48px;
+                transition: .3s;
+                color: white;
+            }
+        }
 
         .action-item {
             display: flex;
@@ -27,6 +52,8 @@ $bg-white: #ffffff;
             cursor: pointer;
             height: 100%;
             position: relative;
+            user-select: none;
+
             .add_cards {
                 display: flex;
                 flex-direction: column;
@@ -34,30 +61,45 @@ $bg-white: #ffffff;
                 justify-content: center;
                 row-gap: 20px;
                 position: absolute;
-                top: 7z0px;
+                top: 100px;
                 background-color: white;
                 padding: 8px 10px;
-                border: 1px solid rgba(0, 0, 0, 0.199);
+                border: 1px solid rgba(20, 133, 35, 0.199);
                 // display: none;
                 display: none;
                 transition: .3s;
+                border-radius: 20px;
+                z-index: 1;
+                // overflow: hidden;
+                .icon {
+                    margin: 0 auto;
+                    color: rgba(0, 128, 0, 0.438);
+                    position: absolute;
+                    top: -20px;
+                    left: 60px;
+                    color: #8db4a0;
+                }
+
+                &.add_cards_true {
+                    display: flex;
+                }
+
                 span {
                     width: 100px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     column-gap: 20px;
-                    padding: 2px 3px;
-                    &:hover{
-                        border: 1px solid grey;
+                    padding: 5px 10px;
+                    transition: .3s;
+
+                    &:hover {
+                        box-shadow: 0 0 4px grey;
+                        border-radius: 20px;
                     }
                 }
             }
-            &:hover{
-                .add_cards{
-                    display: flex;
-                }
-            }
+
             &:first-child {
                 border-left: 1px solid $border-color;
             }
@@ -76,8 +118,72 @@ $bg-white: #ffffff;
         }
 
         .season-selector {
+            max-width: 100px;
+            position: relative;
+
             .hello_world123 {
-                width: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                column-gap: 8px;
+                font-family: Inter;
+                font-size: 15px;
+                font-weight: 500;
+                color: #6a6a6a;
+
+                .hello_world1234 {
+                    color: #b0b0b0;
+                }
+            }
+
+            .odobli {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                // row-gap: 8px;
+                background-color: white;
+                border-radius: 10px;
+                border: 1px solid green;
+                position: absolute;
+                top: 90px;
+                left: -17px;
+                overflow: hidden;
+
+                
+                span {
+                    border: none;
+                    color: #000000;
+                    font-weight: 500;
+                    font-size: 15px;
+                    font-family: Inter;
+                    padding: 8px 10px;
+                    width: 120px;
+                    text-align: center;
+                    transition: .3s;
+                    &:hover{
+                        // box-shadow: 0 0 4px green;
+                        background-color: green;
+                        color: white;
+                        // border-radius: 50px;
+
+                    }
+                }
+                .hello_world404 {
+                    display: inline-block;
+                    white-space: nowrap;
+                    a{
+                        color: black;
+                        text-decoration: none;
+                        &:hover{
+                            color: white;
+                        }
+                    }
+                    &:hover {
+                        box-shadow: 0 0 0 green;
+                        border-radius: 0px;
+                        color: white;
+                    }
+                }
             }
 
             .label {
@@ -149,6 +255,18 @@ $bg-white: #ffffff;
                     height: 100%;
                 }
             }
+        }
+    }
+}
+
+@media(min-width:1800px) {
+    .statistics-top {
+        .top-right-section {
+            margin-left: 100px;
+        }
+
+        .change_icon {
+            transform: translateX(-135px);
         }
     }
 }

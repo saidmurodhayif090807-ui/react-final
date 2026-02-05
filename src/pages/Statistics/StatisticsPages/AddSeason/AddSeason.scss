@@ -1,0 +1,116 @@
+$border-color: #efefef;
+$text-gray: #888;
+$text-green: #4caf50;
+$accent-orange: #ff9800;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.season-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px;
+    background-color: #fff;
+    
+    font-family: Roboto;
+    .season-table {
+        width: 100%;
+        border-collapse: collapse;
+
+        .season-row {
+            border-bottom: 1px solid $border-color;
+
+            &:hover {
+                background-color: #fafafa;
+            }
+        }
+
+        td {
+            padding: 12px;
+            border-right: 1px solid $border-color;
+            vertical-align: middle;
+            min-width: 140px;
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+
+    .field-cell {
+        width: 150px;
+
+        .field-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            color: #333;
+
+            .field-icon {
+                width: 24px;
+                height: 24px;
+                background-color: #ffe0b2;
+                clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); // Rough shape of the icon
+            }
+        }
+    }
+
+    .crop-info {
+        font-size: 0.85rem;
+
+        .crop-header {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 4px;
+
+            .dot {
+                width: 10px;
+                height: 10px;
+                background-color: $accent-orange;
+                border-radius: 50%;
+            }
+
+            .crop-name {
+                font-weight: 600;
+            }
+        }
+
+        .crop-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2px;
+
+            .val-gray {
+                color: $text-gray;
+            }
+
+            .val-green {
+                color: $text-green;
+                font-weight: 500;
+            }
+        }
+
+        .status-text {
+            color: $text-gray;
+            font-size: 0.75rem;
+        }
+    }
+
+    .add-action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        .add-icon {
+            color: #2e7d32;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}

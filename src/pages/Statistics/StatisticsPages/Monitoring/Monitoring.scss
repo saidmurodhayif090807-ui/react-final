@@ -6,6 +6,7 @@ $error-red: #fde2e2;
 $error-border: #f8b4b4;
 
 .monitoring-dashboard {
+  user-select: none;
   padding: 0;
   background-color: $card-bg;
   min-height: 100vh;
@@ -43,6 +44,7 @@ $error-border: #f8b4b4;
   // Card specific layouts
   .rejalar {
     grid-column: span 1;
+
     .error-alert {
       background-color: $error-red;
       border: 1px solid $error-border;
@@ -55,15 +57,22 @@ $error-border: #f8b4b4;
 
   .ekin-tuzilishi {
     grid-column: span 1;
+
     .stats {
       display: flex;
       gap: 40px;
       margin-bottom: 25px;
+
       .value {
         font-size: 24px;
         font-weight: 600;
         display: block;
-        small { font-size: 14px; font-weight: normal; color: $text-light; }
+
+        small {
+          font-size: 14px;
+          font-weight: normal;
+          color: $text-light;
+        }
       }
     }
 
@@ -71,14 +80,65 @@ $error-border: #f8b4b4;
       display: flex;
       height: 15px;
       border-radius: 10px;
-      overflow: hidden;
+      // overflow: hidden;
       background: #eee;
       margin-bottom: 15px;
+      position: relative;
+      cursor: pointer;
 
-      .mosh { background: #67b173; }
-      .makkajoxori { background: #ffcc00; }
-      .bugdoy { background: #e67e22; }
-      .paxta { background: #d3d3d3; }
+      .mosh {
+        background: #67b173;
+        transition: .3s;
+        border-radius: 10px 0 0 10px;
+
+        &:hover {
+          box-shadow: 0 0 100px #67b173;
+          scale: 1.6;
+          transform: translateY(-5px);
+          border-radius: 10px;
+          z-index: 1;
+        }
+      }
+
+      .makkajoxori {
+        background: #ffcc00;
+        transition: .3s;
+
+        &:hover {
+          box-shadow: 0 0 100px #ffcc00;
+          scale: 1.6;
+          transform: translateY(-5px);
+          border-radius: 10px;
+          z-index: 1;
+        }
+      }
+
+      .bugdoy {
+        background: #e67e22;
+        transition: .3s;
+
+        &:hover {
+          box-shadow: 0 0 100px #e67e22;
+          scale: 1.6;
+          border-radius: 10px;
+          transform: translateY(-5px);
+          z-index: 1;
+        }
+      }
+
+      .paxta {
+        background: #d3d3d3;
+        transition: .3s;
+        border-radius: 0 10px 10px 0;
+
+        &:hover {
+          box-shadow: 0 0 100px #d3d3d3;
+          scale: 1.6;
+          transform: translateY(-5px);
+          z-index: 1;
+          border-radius: 10px;
+        }
+      }
     }
 
     .legend {
@@ -87,16 +147,39 @@ $error-border: #f8b4b4;
       gap: 10px;
       font-size: 11px;
       color: $text-dark;
+
+      span {
+        transition: .3s;
+        cursor: pointer;
+
+        &:hover {
+          scale: 1.2;
+        }
+      }
+
       .dot {
         display: inline-block;
         width: 8px;
         height: 8px;
         border-radius: 50%;
         margin-right: 4px;
-        &.mosh { background: #67b173; }
-        &.makkajoxori { background: #ffcc00; }
-        &.bugdoy { background: #e67e22; }
-        &.paxta { background: #d3d3d3; }
+        cursor: pointer;
+
+        &.mosh {
+          background: #67b173;
+        }
+
+        &.makkajoxori {
+          background: #ffcc00;
+        }
+
+        &.bugdoy {
+          background: #e67e22;
+        }
+
+        &.paxta {
+          background: #d3d3d3;
+        }
       }
     }
   }
@@ -104,41 +187,129 @@ $error-border: #f8b4b4;
   .ob-havo {
     grid-column: span 1;
     grid-row: span 2; // Weather is long, spans 2 rows
-    
+
     .current-weather {
       margin-bottom: 20px;
-      .temp { font-size: 32px; font-weight: 500; }
+
+      .temp {
+        font-size: 32px;
+        font-weight: 500;
+      }
     }
 
     .weather-forecast {
       list-style: none;
       padding: 0;
-      li {
+
+      .forecast {
         display: flex;
-        justify-content: space-between;
-        padding: 8px 0;
-        border-bottom: 1px solid #f0f0f0;
-        font-size: 13px;
-        color: $text-light;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        cursor: pointer;
+
+        li {
+          display: flex;
+          justify-content: space-between;
+          padding: 8px 0;
+          border-bottom: 1px solid #f0f0f0;
+          font-size: 13px;
+          color: $text-light;
+        }
+
+        .forecast_cards {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          column-gap: 5px;
+          margin: 10px 0;
+          display: none;
+          transition: .3s;
+
+          span {
+            height: 30px;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+          }
+
+          .big_span {
+            display: flex;
+            flex-direction: row;
+            align-items: self-end;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 28px;
+            font-weight: 300;
+
+            small {
+              font-weight: 300;
+              font-size: 12px;
+            }
+          }
+        }
+
+        &:hover {
+          box-shadow: 0 0 6px #67b173;
+          border-radius: 50px;
+
+          li {
+            border-bottom: none;
+
+            span.temp-range {
+              display: none;
+            }
+          }
+
+          .forecast_cards {
+            display: flex;
+          }
+        }
       }
     }
   }
 
   .temperature-sum {
-    .total-temp { font-size: 28px; font-weight: 600; }
+    .total-temp {
+      font-size: 28px;
+      font-weight: 600;
+    }
+
     .mini-chart-placeholder {
+      max-width: 320px;
       height: 100px;
       background: linear-gradient(transparent, #eef7ee);
       border-radius: 8px;
       margin-top: 15px;
-      img{
-        margin-left: 80px;
+
+      &:hover {
+        img {
+          scale: 1.2;
+          transform: translateY(-20px);
+        }
+
+        img.mini_chart_img {
+          margin-top: 10px;
+        }
+      }
+
+      img {
+        margin-left: 40px;
+        transition: .3s;
       }
     }
   }
 
   .costs {
-    .total-cost { font-size: 28px; font-weight: 600; }
+    .total-cost {
+      font-size: 28px;
+      font-weight: 600;
+    }
   }
 }
 
