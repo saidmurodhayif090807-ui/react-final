@@ -11,7 +11,7 @@ $bg-white: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: 900px;
+    column-gap: 850px;
     border-bottom: 1px solid $border-color;
     padding: 0; // Padding is handled by internal sections
     width: 100%;
@@ -276,7 +276,7 @@ $bg-white: #ffffff;
         }
 
         .change_icon {
-            transform: translateX(-135px);
+            margin-right: 20px;
         }
     }
 }
