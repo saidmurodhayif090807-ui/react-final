@@ -13,11 +13,11 @@ function Statistics() {
     return (
         <div className='Statistics'>
             <div className={poplog?"isolated":"isolated isolated_extra"}>
-                <StatisticsNavbar />
+                <StatisticsNavbar/>
             </div>
             <section className={poplog ? 'combined combined_extra' : 'combined'}>
                 <StatisticsTop handleclick404={handleclick404} poplog={poplog}/>
-                <Outlet />
+                <Outlet className="combined_outlet"/>
             </section>
         </div>
     )

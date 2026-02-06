@@ -3,6 +3,7 @@ $primary-green: #008744;
 $text-gray: #b0b0b0;
 $bg-white: #ffffff;
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 .statistics-top {
     font-family: Inter;
     height: 70px;
@@ -26,19 +27,22 @@ $bg-white: #ffffff;
         .change_icon {
             border: none;
             cursor: pointer;
-            position: absolute;
-            left: -104px;
+            // position: absolute;
+            // left: -104px;
 
             // margin-right: 170px;
             max-height: 60px;
             height: 55px;
             overflow: hidden;
             border-radius: 50px;
+            background-color: green;
 
             .FaChevronDown {
                 height: 48px;
                 width: 48px;
                 transition: .3s;
+                color: white;
+                background-color: green;
                 color: white;
             }
         }
@@ -70,6 +74,7 @@ $bg-white: #ffffff;
                 transition: .3s;
                 border-radius: 20px;
                 z-index: 1;
+
                 // overflow: hidden;
                 .icon {
                     margin: 0 auto;
@@ -149,7 +154,7 @@ $bg-white: #ffffff;
                 left: -17px;
                 overflow: hidden;
 
-                
+
                 span {
                     border: none;
                     color: #000000;
@@ -160,7 +165,8 @@ $bg-white: #ffffff;
                     width: 120px;
                     text-align: center;
                     transition: .3s;
-                    &:hover{
+
+                    &:hover {
                         // box-shadow: 0 0 4px green;
                         background-color: green;
                         color: white;
@@ -168,16 +174,20 @@ $bg-white: #ffffff;
 
                     }
                 }
+
                 .hello_world404 {
                     display: inline-block;
                     white-space: nowrap;
-                    a{
+
+                    a {
                         color: black;
                         text-decoration: none;
-                        &:hover{
+
+                        &:hover {
                             color: white;
                         }
                     }
+
                     &:hover {
                         box-shadow: 0 0 0 green;
                         border-radius: 0px;

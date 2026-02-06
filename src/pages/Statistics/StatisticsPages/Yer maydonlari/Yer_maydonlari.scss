@@ -1,0 +1,76 @@
+.map-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    .leaflet-container {
+        height: 100%;
+        width: 100%;
+        background: #000; // Dark base for satellite look
+    }
+
+    // Polygon Colors
+    .field-mosh {
+        fillColor: #2ecc71;
+        fillOpacity: 0.4;
+        color: #45f590; // Border
+        weight: 2;
+    }
+
+    .field-makkajoxori {
+        fillColor: #f1c40f;
+        fillOpacity: 0.4;
+        color: #ffdb4d;
+        weight: 2;
+    }
+
+    .field-paxta {
+        fillColor: #ecf0f1;
+        fillOpacity: 0.4;
+        color: #ffffff;
+        weight: 2;
+    }
+
+    // Tooltip/Label Styling (The "Pin" look)
+    .custom-label {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+
+        .label-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid white;
+            border-radius: 50% 50% 50% 0; // Teardrop shape
+            transform: rotate(-45deg);
+            width: 50px;
+            height: 50px;
+            color: white;
+
+            span {
+                transform: rotate(45deg); // Flip text back
+                font-size: 10px;
+                font-weight: bold;
+            }
+
+            .area-val {
+                font-size: 14px;
+            }
+        }
+
+        &.label-mosh .label-content {
+            background: rgba(46, 204, 113, 0.8);
+        }
+
+        &.label-makkajoxori .label-content {
+            background: rgba(241, 196, 15, 0.8);
+        }
+
+        &.label-paxta .label-content {
+            background: rgba(189, 195, 199, 0.8);
+        }
+    }
+}

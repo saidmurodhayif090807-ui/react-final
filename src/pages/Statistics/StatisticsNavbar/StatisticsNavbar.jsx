@@ -15,10 +15,10 @@ import { NavLink } from 'react-router-dom';
 const StatisticsNavbar = () => {
   const menuItems = [
     { id: 1, linking: "/statistics/monitoring", title: 'Monitoring', icon: <MdDashboard />, active: true },
-    { id: 2, linking: "/statistics/yermaydonlari", title: 'Yer maydonlari', icon: <MdMap />, active: false },
-    { id: 3, linking: "/statistics/ombor", title: 'Ombor', icon: <MdStore />, active: false },
-    { id: 4, linking: "/statistics/fermerxojaligi", title: 'Fermer xo’jalig', icon: <MdAgriculture />, active: false },
-    { id: 5, linking: "/statistics/ishjarayonlari", title: 'Ish jarayonlari', icon: <MdEngineering />, active: false },
+    { id: 2, linking: "/statistics/yermaydonlari", title: 'Yer maydonlari', icon: <MdMap />, active: true },
+    { id: 3, linking: "/statistics/ombor", title: 'Ombor', icon: <MdStore />, active: true },
+    { id: 4, linking: "/statistics/fermerxojaligi", title: 'Fermer xo’jalig', icon: <MdAgriculture />, active: true },
+    { id: 5, linking: "/statistics/ishjarayonlari", title: 'Ish jarayonlari', icon: <MdEngineering />, active: true },
   ];
 
   return (

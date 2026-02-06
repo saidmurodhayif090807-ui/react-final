@@ -1,0 +1,114 @@
+$green-active: #27ae60;
+$card-mosh: #66bb6a;
+$card-makkajoxori: #fbc02d;
+$card-bugdoy: #e67e22;
+$card-paxta: #e0dbd1;
+
+.ombor-container {
+  padding: 20px;
+  background-color: #f9fafb;
+  font-family: 'Inter', sans-serif;
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+
+    .summary-card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+      &.active { border: 1px solid $green-active; }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+        h4 { font-size: 0.85rem; margin: 0; color: #333; }
+      }
+
+      .stat-group {
+        label { font-size: 0.75rem; color: #999; display: block; }
+        p { font-size: 1.2rem; font-weight: 600; margin: 5px 0 0; }
+        .large-val { font-size: 1.5rem; }
+      }
+
+      .stat-split {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      h3 { margin: 0; }
+      .add-btn {
+        background: #107c41;
+        color: white;
+        border: none;
+        padding: 6px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    }
+
+    .right select {
+      padding: 5px 10px;
+      margin-left: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      color: #666;
+    }
+  }
+
+  .inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+
+    .inventory-card {
+      padding: 15px;
+      border-radius: 6px;
+      color: white;
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .card-top {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        .code { opacity: 0.8; font-size: 0.8rem; }
+      }
+
+      .card-bottom {
+        label { font-size: 0.75rem; opacity: 0.9; }
+        p { font-size: 1.25rem; margin: 0; }
+      }
+
+      // Dynamic Colors
+      &.bg-mosh { background-color: $card-mosh; }
+      &.bg-makkajoxori { background-color: $card-makkajoxori; }
+      &.bg-bugdoy { background-color: $card-bugdoy; }
+      &.bg-paxta { 
+        background-color: $card-paxta; 
+        color: #1b5e20; // Dark text for light grey card
+      }
+    }
+  }
+}

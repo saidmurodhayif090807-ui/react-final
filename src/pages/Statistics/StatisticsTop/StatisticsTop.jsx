@@ -6,6 +6,7 @@ import { LuWheat } from "react-icons/lu";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import Statistics_top_imgs1 from '../Statistics_imgs/icons8-menu-48.png'
 import { NavLink } from 'react-router-dom';
+import { TiThMenu } from "react-icons/ti";
 const StatisticsTop = (props) => {
   const [statistic_open, setStatistic_open] = useState(false);
   const [statistic2_open, setStatistic2_open] = useState(false);
@@ -20,8 +21,8 @@ const StatisticsTop = (props) => {
   return (
     <header className="statistics-top">
       <div className="top-left-section">
-        <button onClick={props.handleclick404} className='change_icon'>{props.poplog ? <FaChevronDown className='FaChevronDown' /> : <img src={Statistics_top_imgs1} alt="" />}</button>
         {/* Qoshish (Add) Button */}
+        <button onClick={props.handleclick404} className='change_icon'>{props.poplog ? <FaChevronDown className='FaChevronDown' /> : <TiThMenu className='FaChevronDown' />}</button>
         <div onClick={box_handle_1} className="action-item add-action">
           {statistic_open ? <MdRemoveCircleOutline className='icon' /> : <MdAddCircleOutline className="icon" />}
           <span>Qo'shish</span>
@@ -32,17 +33,30 @@ const StatisticsTop = (props) => {
             <span className='add_extra_card'><MdMap />Maydon</span>
           </div>
         </div>
-
         {/* Mavsumlar (Seasons) Dropdown */}
         <div className="action-item season-selector">
           <div className="label">Mavsumlar</div>
-          <h1 className='hello_world123' onClick={box_handle_2}>{Sword}{statistic2_open?<FaChevronUp className='hello_world1234'/>:<FaChevronDown className='hello_world1234' />}</h1>
+          <h1 className='hello_world123' onClick={box_handle_2}>{Sword}{statistic2_open ? <FaChevronUp className='hello_world1234' /> : <FaChevronDown className='hello_world1234' />}</h1>
           {statistic2_open ? <div className="odobli">
-            <span onClick={()=>setSword("2022")}>2022</span>
-            <span onClick={()=>setSword("2021")}>2021</span>
-            <span onClick={()=>setSword("2020")}>2020</span>
-            <span onClick={()=>setSword("2019")}>2019</span>
-            <span className='hello_world404'><NavLink to={'/statistics/addseason'}>Mavsum qo’shish</NavLink></span>
+            <span onClick={() => {
+              setSword("2022");
+              box_handle_2();
+            }}>2022</span>
+            <span onClick={() => {
+              setSword("2021");
+              box_handle_2();
+            }}>2021</span>
+            <span onClick={() => {
+              setSword("2020")
+              box_handle_2();
+            }}>2020</span>
+            <span onClick={() => {
+              setSword("2019")
+              box_handle_2();
+            }}>2019</span>
+            <span onClick={()=>{
+              box_handle_2();
+            }} className='hello_world404'><NavLink to={'/statistics/addseason'}>Mavsum qo'shish</NavLink></span>
           </div> : <></>}
         </div>
       </div>

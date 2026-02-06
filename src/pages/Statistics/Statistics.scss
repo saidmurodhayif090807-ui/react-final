@@ -4,44 +4,30 @@
     justify-content: center;
 
     .isolated {
-        position: relative;
-        display: flex;
-        align-items: self-start;
         z-index: 1;
         transition: .5s;
 
         &.isolated_extra {
-            transform: translateX(-274px);
+            transform: translateX(-339px);
             transition: .5s;
-            display: flex;
-            align-items: self-start;
         }
     }
 
     .combined {
         display: flex;
-        align-items: self-start;
-        justify-content: center;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         transition: .5s;
-
+        .combined_outlet{
+            z-index: -1;
+        }
 
         &.combined_extra {
             transition: .5s;
-            transform: translateX(274px);
+            transform: translateX(244px);
             overflow-x: hidden;
             overscroll-behavior-x: contain;
-        }
-
-        .lol1234 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            column-gap: 100px;
-
-            .btn11111 {
-                border: none;
-            }
         }
     }
 }

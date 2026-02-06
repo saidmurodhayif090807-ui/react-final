@@ -68,7 +68,6 @@ $border-light: #e0e0e0;
       padding: 15px 24px;
       cursor: pointer;
       transition: all 0.2s ease;
-      position: relative;
       color: $text-gray;
 
       .nav-icon {
@@ -94,7 +93,3 @@ $border-light: #e0e0e0;
 
 // Adjusting main content area to make room for fixed sidebar
 // You would apply this to your main wrapper or Layout component
-.main-layout-content {
-  margin-left: 260px;
-  width: calc(100% - 260px);
-}
