@@ -1,0 +1,71 @@
+$primary-green: #1a4d2e;
+$border-green: #a8d5ba;
+$text-gray: #888;
+$bg-light: #f9fbf9;
+
+.user-info-container {
+  padding: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 500px;
+
+  .profile-header {
+    margin-bottom: 30px;
+
+    .avatar-circle {
+      width: 80px;
+      height: 80px;
+      background-color: #e0e0e0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      
+      i { font-size: 40px; color: #fff; }
+    }
+
+    .user-name {
+      color: $primary-green;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+
+  .details-grid {
+    margin-bottom: 40px;
+
+    .detail-row {
+      display: flex;
+      margin-bottom: 15px;
+      font-size: 16px;
+
+      .label {
+        width: 150px;
+        color: $primary-green;
+        font-weight: 500;
+      }
+
+      .value {
+        color: $text-gray;
+        flex: 1;
+      }
+    }
+  }
+
+  .edit-button {
+    background-color: transparent;
+    border: 1px solid $border-green;
+    color: $primary-green;
+    padding: 10px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $bg-light;
+      border-color: $primary-green;
+    }
+  }
+}

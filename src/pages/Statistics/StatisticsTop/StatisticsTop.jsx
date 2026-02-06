@@ -3,13 +3,14 @@ import './StatisticsTop.scss';
 import { MdAddCircleOutline, MdNotificationsNone, MdKeyboardArrowDown, MdMap, MdRemoveCircleOutline } from 'react-icons/md';
 import { GiSpade } from "react-icons/gi";
 import { LuWheat } from "react-icons/lu";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaChevronDown, FaChevronUp, FaUser } from "react-icons/fa";
 import Statistics_top_imgs1 from '../Statistics_imgs/icons8-menu-48.png'
 import { NavLink } from 'react-router-dom';
 import { TiThMenu } from "react-icons/ti";
 const StatisticsTop = (props) => {
   const [statistic_open, setStatistic_open] = useState(false);
   const [statistic2_open, setStatistic2_open] = useState(false);
+  const [statistic3_open, setStatistic3_open] = useState(false);
   const [Sword, setSword] = useState("2022");
   const box_handle_2 = () => {
     setStatistic2_open(!statistic2_open)
@@ -17,6 +18,9 @@ const StatisticsTop = (props) => {
   const [statistic2, setStatistic2] = useState("");
   const box_handle_1 = () => {
     setStatistic_open(!statistic_open)
+  }
+  const box_handle_4 = () => {
+    setStatistic3_open(!statistic3_open)
   }
   return (
     <header className="statistics-top">
@@ -54,7 +58,7 @@ const StatisticsTop = (props) => {
               setSword("2019")
               box_handle_2();
             }}>2019</span>
-            <span onClick={()=>{
+            <span onClick={() => {
               box_handle_2();
             }} className='hello_world404'><NavLink to={'/statistics/addseason'}>Mavsum qo'shish</NavLink></span>
           </div> : <></>}
@@ -70,7 +74,7 @@ const StatisticsTop = (props) => {
 
         {/* User Profile Avatar */}
         <div className="user-profile">
-          <div className="avatar-placeholder">
+          <div onClick={box_handle_4} className="avatar-placeholder">
             {/* Using an SVG or Icon to match the green circular profile */}
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 31C24.2843 31 31 24.2843 31 16C31 7.71573 24.2843 1 16 1C7.71573 1 1 7.71573 1 16C1 24.2843 7.71573 31 16 31Z" stroke="#008744" strokeWidth="2" />
@@ -78,6 +82,48 @@ const StatisticsTop = (props) => {
               <path d="M7 25C7 21.134 11.0294 18 16 18C20.9706 18 25 21.134 25 25" stroke="#008744" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </div>
+          {statistic3_open ?
+            <div className='profile_open'>
+              <div className="icon_page">
+                <NavLink to={'/statistics/userinfo'}><FaUser className='icon_page_icon' /></NavLink>
+                <div className="render">
+                  <h1>Nodir Aliyev</h1>
+                  <p>“Agronom” MCHJ</p>
+                  <p>+99895 200 01 01</p>
+                </div>
+              </div>
+              <div className="icon_page2">
+                <h1>“Dalalr va ekinlar” tarifi</h1>
+                <p>Tarifni tanlang</p>
+              </div>
+              <div className="icon_page3">
+                <div className="left">
+                  <h1>Telefon raqami</h1>
+                  <p>Raqam qo’shish</p>
+                </div>
+                <div className="right">
+                  <p>+99895 200 01 01</p>
+                </div>
+              </div>
+              <div className="icon_page4">
+                <h1>Til</h1>
+                <select className='icon_page_select' name="" id="">
+                  <option value="uzb">uzb</option>
+                  <option value="eng">eng</option>
+                  <option value="rus">rus</option>
+                </select>
+              </div>
+              <div className="icon_page5">
+                <h1>Sozlamalar</h1>
+              </div>
+              <div className="icon_page6">
+                <h1>Foydalanish shartlari</h1>
+              </div>
+              <div className="icon_page7">
+                <NavLink to={'/'}>Chiqish</NavLink>
+              </div>
+            </div>
+            : <></>}
         </div>
       </div>
     </header>

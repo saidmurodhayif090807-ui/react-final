@@ -19,7 +19,8 @@
         align-items: center;
         justify-content: center;
         transition: .5s;
-        .combined_outlet{
+
+        .combined_outlet {
             z-index: -1;
         }
 
@@ -29,5 +30,19 @@
             overflow-x: hidden;
             overscroll-behavior-x: contain;
         }
+    }
+}
+
+@media(min-width:1600px) {
+    .combined {
+        transform: translateX(50px);
+    }
+
+    .isolated.isolated_extra {
+        transform: translateX(100px);
+        display: none;
+    }
+    .combined.combined_extra{
+        transform: translateX(100px);
     }
 }
