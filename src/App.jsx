@@ -10,6 +10,7 @@ import Ish_jarayonlari from './pages/Statistics/StatisticsPages/Ish jarayonlari/
 import CreateAccount from './pages/CreateAccount/CreateAccount'
 import Successfull_Login from './pages/Successfull_Login/Successfull_Login'
 import AddSeason from './pages/Statistics/StatisticsPages/AddSeason/AddSeason'
+import UserInfo from './pages/Statistics/StatisticsPages/UserInfo/UserInfo'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='fermerxojaligi' element={<Fermer_xojaligi/>} />
           <Route path='ishjarayonlari' element={<Ish_jarayonlari/>} />
           <Route path='addseason' element={<AddSeason/>} />
+          <Route path='userinfo' element={<UserInfo/>} />
         </Route>
         <Route path='/createaccount' element={<CreateAccount/>}/>
         <Route path='/successfullLogin' element={<Successfull_Login/>}/>
